@@ -24,7 +24,7 @@ export class AppComponent implements OnInit{
     Ventas: new FormArray ([])
   })
 
-  get Ventas(): FormArray {
+  get Ventas(): FormArray {  // get de la propiedad de dataForm
     return this.dataForm.get('Ventas') as FormArray;
   }
 
@@ -37,6 +37,10 @@ export class AppComponent implements OnInit{
 
   addVentas(){
     this.Ventas.push(this.nuevaVenta());
+  }
+
+  removeVenta(i:number){
+    this.Ventas.removeAt(i);
   }
 
   ngOnInit(): void {
